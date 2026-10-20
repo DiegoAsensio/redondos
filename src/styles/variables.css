@@ -1,0 +1,19 @@
+:root {
+
+  --carbon: #15120f;
+  --carbon-2: #1d1916;
+  --ash: #2b2622;
+  --paper: #e8dec6;
+  --paper-dim: #b3a98f;
+  --paper-faint: rgba(232, 222, 198, 0.16);
+  --ink: #1b1713;
+  --red: #b8261d;
+  --red-bright: #e0392b;
+
+  --font-display: 'Rubik Dirt', Impact, 'Arial Black', sans-serif;
+  --font-text: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+
+  --nav-h: 3.5rem;
+  --gutter: clamp(1.1rem, 4vw, 3.5rem);
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}

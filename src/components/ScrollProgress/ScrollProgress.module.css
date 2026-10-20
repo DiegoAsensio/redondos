@@ -1,0 +1,128 @@
+.root {
+  position: absolute;
+  z-index: 5;
+  right: var(--gutter);
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.9rem;
+}
+
+.status {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-size: 0.9rem;
+  color: var(--paper-dim);
+  line-height: 1.25;
+  text-align: right;
+}
+.position {
+  white-space: nowrap;
+}
+.current {
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  color: var(--paper);
+}
+.remaining {
+  font-style: italic;
+}
+
+.ticks {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tick {
+  position: relative;
+  display: block;
+  width: 2rem;
+  height: 1.55rem;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+.tick::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 0.9rem;
+  height: 2px;
+  background: var(--paper-faint);
+  transition: width 0.35s var(--ease-out), background 0.35s;
+}
+.done::after {
+  background: var(--paper-dim);
+}
+.active::after {
+  width: 1.9rem;
+  height: 3px;
+  background: var(--red-bright);
+}
+.tick:hover::after {
+  width: 1.5rem;
+  background: var(--paper);
+}
+
+@media (max-width: 760px) {
+  .root {
+    top: auto;
+    bottom: 0.7rem;
+    left: var(--gutter);
+    right: var(--gutter);
+    transform: none;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .status {
+    text-align: left;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    gap: 0.4rem;
+    align-items: baseline;
+    order: 1;
+  }
+  .current {
+    font-size: 1.3rem;
+  }
+  .remaining {
+    margin-left: 0.4rem;
+  }
+  .ticks {
+    flex-direction: row;
+    order: 2;
+  }
+  .tick {
+    width: 1.55rem;
+    height: 2.75rem;
+  }
+  .tick::after {
+    right: auto;
+    left: 50%;
+    top: auto;
+    bottom: 0.9rem;
+    width: 2px;
+    height: 0.7rem;
+    transform: translateX(-50%);
+    transition: height 0.35s var(--ease-out), background 0.35s;
+  }
+  .active::after {
+    width: 3px;
+    height: 1.3rem;
+  }
+  .tick:hover::after {
+    width: 2px;
+    height: 1rem;
+  }
+}

@@ -1,0 +1,59 @@
+.page {
+  max-width: 82rem;
+  margin: 0 auto;
+  padding: calc(var(--nav-h) + 2rem) var(--gutter) 4rem;
+}
+
+.head {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+.title {
+  font-size: clamp(2.4rem, 7vw, 5.5rem);
+}
+.lead {
+  max-width: 52ch;
+  color: var(--paper-dim);
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 0.8rem;
+}
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  min-height: 2.75rem;
+  padding: 0 1.1rem;
+  background: transparent;
+  border: 1.5px solid var(--paper-faint);
+  color: var(--paper-dim);
+  cursor: pointer;
+  transition: border-color 0.25s, color 0.25s, background 0.25s;
+}
+.chip:hover {
+  border-color: var(--paper);
+  color: var(--paper);
+}
+.chipOn {
+  background: var(--paper);
+  border-color: var(--paper);
+  color: var(--ink);
+}
+.chipOn:hover {
+  color: var(--ink);
+}
+.chipCount {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+}
+.chipOn .chipCount {
+  color: var(--red);
+}
+
